@@ -1,22 +1,9 @@
-const request = require('request');
-const cheerio = require('cheerio');
+"use strict";
 
-request('https://www.bhphotovideo.com/c/product/1459304-REG/microsoft_pgu_00001_13_5_surface_book_2.html', (error, response, html) => {
-  if(!error && response.statusCode == 200) {
-    //console.log(html);
-    const $ = cheerio.load(html);
-    const productInfo = $('.container_1ah2-FqCRqaBHAIFmuW1m3');
-    //console.log(productInfo.html());
-    console.log(productInfo.text());
-  }
-});
-
-request('https://www.bhphotovideo.com/c/product/1459304-REG/microsoft_pgu_00001_13_5_surface_book_2.html/reviews', (error, response, html) => {
-  if(!error && response.statusCode == 200) {
-    //console.log(html);
-    const $ = cheerio.load(html);
-    const productReviews = $('.desc_Jy1ODKM10ytF87QZM2xBd');
-    //console.log(productReviews.html());
-    console.log(productReviews.text());
-  }
-});
+var name, features;
+fetch('https://gist.githubusercontent.com/NanJ90/ab13a827a46bd30dada760adc41a2877/raw/3d9fdd48eddf764d991b050383df94ad04bb2f2a/data.json')
+.then(function(res) {
+  res.json().then(function(parsedJson) {
+    console.log('This is the parsed json', parsedJson);
+  })
+})
