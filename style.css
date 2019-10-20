@@ -1,0 +1,8 @@
+body{
+  margin-top: auto;
+}
+
+#item-descript p {
+    margin-left: 10 px;
+    text-align: center;
+}
